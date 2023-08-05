@@ -7,6 +7,19 @@
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
-    <script></script>
+    <script>
+      const pressed = [];
+      const sequence = "cornify";
+
+      const handleKeyup = (e) => {
+        pressed.push(e.key);
+        if (pressed.length > sequence.length) {
+          pressed.shift();
+        }
+        pressed.join("") === sequence ? cornify_add() : null;
+      };
+
+      window.addEventListener("keyup", handleKeyup);
+    </script>
   </body>
 </html>
